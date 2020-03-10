@@ -1,0 +1,72 @@
+options:
+  protocol-name:
+    type: string
+    default: 'openid'
+    description: |
+      Protocol name to use for URL and generation. Must match the one that
+      will be configured via OS-FEDERATION API.
+  idp-name:
+    type: string
+    default: 'google'
+    description: |
+      Identity provider name to use for URL generation. Must match the one
+      that will be configured via OS-FEDERATION API.
+  user-facing-name:
+    type: string
+    default: 'Google'
+    description: |
+      A user-facing name to be used in the OpenStack dashboard.
+  oidc-claim-prefix:
+    type: string
+    default: 'OIDC-'
+    description: |
+      OIDCClaimPrefix is a prefix that will be added to each OIDC claim.
+  oidc-response-type:
+    type: string
+    default: 'id_token'
+    description: |
+      OIDCResponseType defines the OpenID Connect authentication flow used.
+  oidc-scope:
+    type: string
+    default: 'openid email profile'
+    description: |
+      OIDCScope defines the claims that will be returned by the OIDC Provider.
+  oidc-provider-metadata-url:
+    type: string
+    default: 'https://accounts.google.com/.well-known/openid-configuration'
+    description: |
+      OIDCProviderMetadataURL is the URL from which the module will obtain all
+      the OIDC Provider configuration details in json format (endpoints, 
+      supported flows, etc.).
+      For example https://accounts.google.com/.well-known/openid-configuration
+  oidc-client-id:
+    type: string
+    default:
+    description: |
+      OIDCClientID is the client ID issued by the OIDC Provider during the
+      client registration phase.
+  oidc-client-secret:
+    type: string
+    default:
+    description: |
+      OIDCClientSecret is a secret issued to the client by the OIDC Provider
+      during the client registration phase.
+  oidc-crypto-passphrase:
+    type: string
+    default: 'cryptopassphrase'
+    description: |
+      OIDCCryptoPassphrase is a passphrase used to encrypt claims.
+  oidc-redirect-uri:
+    type: string
+    default:
+    description: |
+      OIDCRedirectURI is a protected (by the module itself) URI that act as
+      callback for the authentication response,
+      e.g. https://FQDN:5000/v3/auth/OS-FEDERATION/websso/openid/redirect
+  keystone-remote-id-attribute:
+    type: string
+    default: 'HTTP_OIDC_ISS'
+    description: |
+      Identity provider remote ID. 
+      See https://docs.openstack.org/keystone/ocata/federation/federated_identity.html
+

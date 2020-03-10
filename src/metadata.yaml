@@ -1,0 +1,30 @@
+name: keystone-oidc
+subordinate: true
+summary: <Fill in summary here>
+maintainer: Claudio Pisa <claudio.pisa@garr.it>
+description: |
+  The main goal of this charm is to generate the necessary configuration
+  for use in the Keystone charm related to OIDC config
+  generation and signaling Keystone service restart.
+  Keystone has a concept of a federated backend which supports OIDC
+  as well as an authentication plug-in called "mapped" which does the rest of the
+  work of resolving symbolic attributes
+tags:
+  - openstack
+  - identity
+  - federation
+  - idP
+series:
+  - xenial
+  - bionic
+provides:
+  keystone-fid-service-provider:
+    interface: keystone-fid-service-provider
+    scope: container
+  websso-fid-service-provider:
+    interface: websso-fid-service-provider
+    scope: global
+requires:
+  container:
+    interface: juju-info
+    scope: container

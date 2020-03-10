@@ -1,0 +1,5 @@
+includes: ['layer:openstack', 'layer:leadership', 'interface:keystone-fid-service-provider', 'interface:websso-fid-service-provider', 'interface:juju-info']
+options:
+  basic:
+    use_venv: True
+    packages: [ 'libffi-dev', 'libssl-dev', 'libxslt1-dev' ]
